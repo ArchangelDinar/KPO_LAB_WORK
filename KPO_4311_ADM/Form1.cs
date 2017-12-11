@@ -29,7 +29,7 @@ namespace KPO_4311_ADM
         private void loadToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var loader = AppGlobalSettings.getLoader();
-            loader.Execute(dataGridViewKonfigurationList);
+            loader.Execute();
             _konfigurationList = loader.konfigurationList;
             dataGridViewKonfigurationList.DataSource = new BindingSource { DataSource = _konfigurationList };
         }
