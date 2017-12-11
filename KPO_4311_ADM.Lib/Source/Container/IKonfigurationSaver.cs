@@ -95,12 +95,19 @@ namespace KPO_4311_ADM.Lib
             set
             {
                 throw new NotImplementedException();
+                //установить лист конфигураций в заданное значение
             }
         }
 
         public void Execute()
         {
             throw new NotImplementedException();
+            /*
+             * Открыть файл для записи
+             * (Количиство элементов в листе конфигураций) раз
+             *      Записать в файл строку с данными из конфигурации
+             * Закрыть файл
+             */
         }
     }
 }
