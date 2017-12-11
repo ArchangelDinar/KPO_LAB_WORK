@@ -47,6 +47,7 @@
     <Compile Include="Source\Container\IKonfigurationFactory.cs" />
     <Compile Include="Source\Container\IKonfigurationLoader.cs" />
     <Compile Include="Source\Container\IKonfigurationSaver.cs" />
+    <Compile Include="Source\Container\IDataFileRow.cs" />
     <Compile Include="Source\Container\Konfiguration.cs" />
     <Compile Include="Source\Container\KonfigurationFilter.cs" />
     <Compile Include="Source\KonfigurationForm.cs">
