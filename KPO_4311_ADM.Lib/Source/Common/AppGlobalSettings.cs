@@ -14,7 +14,7 @@ namespace KPO_4311_ADM.Lib
         public static string logPath => _logPath;
         public static string dataFileName => _dataFileName;
         public static string rowDataFileName => _rowDataFileName;
-        private static IKonfigurationFactory konfigurationFactory = new KonfigurationFactoryFile();
+        private static IKonfigurationFactory konfigurationFactory = new KonfigurationFactoryModifiedPDRFile();
 
         static AppGlobalSettings()
         {
