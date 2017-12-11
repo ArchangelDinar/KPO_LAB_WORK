@@ -16,3 +16,15 @@ F:\Documents\Visual Studio 2015\Projects\KPO_4311_ADM\KPO_4311_ADM\bin\Debug\ru\
 F:\Documents\GitHub\KPO_LAB_WORK\KPO_4311_ADM\bin\Debug\KPO_4311_ADM.exe.config
 F:\Documents\GitHub\KPO_LAB_WORK\KPO_4311_ADM\obj\Debug\KPO_4311_ADM.exe
 F:\Documents\GitHub\KPO_LAB_WORK\KPO_4311_ADM\obj\Debug\KPO_4311_ADM.pdb
+F:\Documents\GitHub\KPO_LAB_WORK\KPO_4311_ADM\obj\Debug\KPO_4311_ADM.Main.csprojResolveAssemblyReference.cache
+F:\Documents\GitHub\KPO_LAB_WORK\KPO_4311_ADM\obj\Debug\KPO_4311_ADM.Form1.resources
+F:\Documents\GitHub\KPO_LAB_WORK\KPO_4311_ADM\obj\Debug\KPO_4311_ADM.Properties.Resources.resources
+F:\Documents\GitHub\KPO_LAB_WORK\KPO_4311_ADM\obj\Debug\KPO_4311_ADM.Main.csproj.GenerateResource.Cache
+F:\Documents\GitHub\KPO_LAB_WORK\KPO_4311_ADM\bin\Debug\KPO_4311_ADM.exe
+F:\Documents\GitHub\KPO_LAB_WORK\KPO_4311_ADM\bin\Debug\KPO_4311_ADM.pdb
+F:\Documents\GitHub\KPO_LAB_WORK\KPO_4311_ADM\bin\Debug\KPO_4311_ADM.Lib.dll
+F:\Documents\GitHub\KPO_LAB_WORK\KPO_4311_ADM\bin\Debug\KPO_4311_ADM.Test.dll
+F:\Documents\GitHub\KPO_LAB_WORK\KPO_4311_ADM\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+F:\Documents\GitHub\KPO_LAB_WORK\KPO_4311_ADM\bin\Debug\KPO_4311_ADM.Lib.pdb
+F:\Documents\GitHub\KPO_LAB_WORK\KPO_4311_ADM\bin\Debug\KPO_4311_ADM.Test.pdb
+F:\Documents\GitHub\KPO_LAB_WORK\KPO_4311_ADM\bin\Debug\ru\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll

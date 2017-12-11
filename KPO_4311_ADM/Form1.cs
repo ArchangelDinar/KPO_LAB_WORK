@@ -90,27 +90,6 @@ namespace KPO_4311_ADM
                 filtrating = !filtrating;
             }
         }
-
-        private void loadToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            if (checkBoxModified.Checked)
-                dataGridViewKonfigurationList.DataSource = new BindingSource { DataSource = PDRowModified.Load(new int[] { 20, 20, 8, 8, 8, 19 }) };
-            else
-            {
-                PDRow.howToShowRow = ShowMessageWindow;
-                dataGridViewKonfigurationList.DataSource = new BindingSource { DataSource = PDRow.Load() };
-            }
-        }
-
-        private void saveToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            if (checkBoxModified.Checked)
-                PDRowModified.Save(((dataGridViewKonfigurationList.DataSource as BindingSource).DataSource as List<Konfiguration>), new int[] { 20, 20, 8, 8, 8, 19 });
-            else
-            {
-                PDRow.howToShowRow = ShowMessageWindow;
-                PDRow.Save(((dataGridViewKonfigurationList.DataSource as BindingSource).DataSource as List<Konfiguration>));
-            }
-        }
+        
     }
 }

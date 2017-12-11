@@ -7,3 +7,12 @@ F:\Documents\Visual Studio 2015\Projects\KPO_4311_ADM\KPO_4311_ADM.Test\bin\Debu
 F:\Documents\Visual Studio 2015\Projects\KPO_4311_ADM\KPO_4311_ADM.Test\obj\Debug\KPO_4311_ADM.Test.csprojResolveAssemblyReference.cache
 F:\Documents\Visual Studio 2015\Projects\KPO_4311_ADM\KPO_4311_ADM.Test\obj\Debug\KPO_4311_ADM.Test.dll
 F:\Documents\Visual Studio 2015\Projects\KPO_4311_ADM\KPO_4311_ADM.Test\obj\Debug\KPO_4311_ADM.Test.pdb
+F:\Documents\GitHub\KPO_LAB_WORK\KPO_4311_ADM.Test\bin\Debug\KPO_4311_ADM.Test.dll
+F:\Documents\GitHub\KPO_LAB_WORK\KPO_4311_ADM.Test\bin\Debug\KPO_4311_ADM.Test.pdb
+F:\Documents\GitHub\KPO_LAB_WORK\KPO_4311_ADM.Test\bin\Debug\KPO_4311_ADM.Lib.dll
+F:\Documents\GitHub\KPO_LAB_WORK\KPO_4311_ADM.Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+F:\Documents\GitHub\KPO_LAB_WORK\KPO_4311_ADM.Test\bin\Debug\KPO_4311_ADM.Lib.pdb
+F:\Documents\GitHub\KPO_LAB_WORK\KPO_4311_ADM.Test\bin\Debug\ru\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+F:\Documents\GitHub\KPO_LAB_WORK\KPO_4311_ADM.Test\obj\Debug\KPO_4311_ADM.Test.csprojResolveAssemblyReference.cache
+F:\Documents\GitHub\KPO_LAB_WORK\KPO_4311_ADM.Test\obj\Debug\KPO_4311_ADM.Test.dll
+F:\Documents\GitHub\KPO_LAB_WORK\KPO_4311_ADM.Test\obj\Debug\KPO_4311_ADM.Test.pdb
