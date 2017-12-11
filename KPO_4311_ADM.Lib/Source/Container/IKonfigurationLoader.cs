@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -104,28 +105,43 @@ namespace KPO_4311_ADM.Lib
 
     public class KonfigurationPDRLoader : IKonfigurationLoader
     {
+        private List<Konfiguration> _konfigurationList;
         public List<Konfiguration> konfigurationList
         {
             get
             {
-                throw new NotImplementedException();
-                //вернуть лист конфигураций
+                return _konfigurationList;
             }
         }
 
         public void Execute(DataGridView dgv)
         {
-            throw new NotImplementedException();
-            /*Создать лист с конфигурациями
-             * Открыть файл для чтения
-             * Пока не достигли конца файла
-             *      Считать из файла строку
-             *      Преобразовать строку к строковому массиву
-             *      Занести в лист новую конфигурацию с данными из массива
-             * Конец
-             * Закрыть файл
-             * Вернуть лист
-             */
+            _konfigurationList = new List<Konfiguration>();
+            try
+            {
+                FileStream file = new FileStream(AppGlobalSettings.rowDataFileName, FileMode.Open);
+                StreamReader reader = new StreamReader(file);
+                while (true)
+                {
+                    string row = reader.ReadLine();
+                    if (row == "") break;                    
+                    _konfigurationList.Add(new Konfiguration
+                    {
+                        OS = row.Substring(0, 20).Trim(' '),
+                        SUBD = row.Substring(20, 20).Trim(' '),
+                        HD = Convert.ToInt32(row.Substring(40, 8)),
+                        SD = Convert.ToInt32(row.Substring(48, 8)),
+                        PRICE = Convert.ToInt32(row.Substring(56, 8)),
+                        CREATETIME = Convert.ToDateTime(row.Substring(64, 19))
+                    });
+                }
+                reader.Close();
+                file.Close();
+            }
+            catch (Exception ex)
+            {
+                LogUtility.ErrorLog(ex.Message);
+            }
         }
     }
 
