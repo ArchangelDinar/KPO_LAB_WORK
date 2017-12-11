@@ -42,4 +42,19 @@ namespace KPO_4311_ADM.Lib
         }
     }
 
+    public class KonfigurationFactoryPDRFile : IKonfigurationFactory
+    {
+        public IKonfigurationLoader CreateKonfigurationLoader()
+        {
+            //throw new NotImplementedException();
+            return new KonfigurationPDRLoader();
+        }
+
+        public IKonfigurationSaver CreateKonfigurationSaver()
+        {
+            //throw new NotImplementedException();
+            return new KonfigurationPDRSaver();
+        }
+    }
+
 }
