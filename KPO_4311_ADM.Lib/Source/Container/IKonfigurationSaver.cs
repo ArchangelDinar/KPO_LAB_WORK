@@ -125,4 +125,31 @@ namespace KPO_4311_ADM.Lib
             }
         }
     }
+
+    public class KonfigurationModifiedPDRSaver : IKonfigurationSaver
+    {
+        public List<Konfiguration> konfigurationList
+        {
+            set
+            {
+                throw new NotImplementedException();
+                //установить лист конфигураций в заданное значение
+            }
+        }
+
+        public void Execute()
+        {
+            throw new NotImplementedException();
+            /*
+             * Открыть файл для чтения
+             * Создать Строку Файла Данных СФД
+             * (Количество элементнов в листе конфигураций) Раз
+             *      Создать массив строк и проинициализировать его свойстами из i-той конфигурации
+             *      С помощью СФД преобразовать массив в строку
+             *      Записать в файл строку
+             * Конец Раз
+             * Закрыть файл
+             */
+        }
+    }
 }

@@ -144,4 +144,33 @@ namespace KPO_4311_ADM.Lib
         }
     }
 
+    public class KonfigurationModifiedPDRLoader : IKonfigurationLoader
+    {
+        public List<Konfiguration> konfigurationList
+        {
+            get
+            {
+                throw new NotImplementedException();
+                //вернуть лист конфигураций
+            }
+        }
+
+        public void Execute()
+        {
+            throw new NotImplementedException();
+            /*
+             * Создать лист конфигураций
+             * Создать строку файла данных - СФД
+             * Открыть файл для чтения
+             * Пока не конец файла
+             *      Считать строку с файла
+             *      С помощью СФД преобразовать строку к массиву
+             *      Создать новую конфигурацию со свойсвами из массива
+             *      Добавить в лист новую конфигурацию
+             * Конец пока
+             * Закрыть файл
+             * Вернуть лист конфигураций
+             */
+        }
+    }
 }
