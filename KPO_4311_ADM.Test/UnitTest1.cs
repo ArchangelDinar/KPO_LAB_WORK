@@ -108,5 +108,27 @@ namespace KPO_4311_ADM.Test
         {
             globalStringForTestMethod = str.Trim(' ');
         }
+
+        [TestMethod]
+        public void TestDataFileRowFromArrayToString()
+        {
+            DataFileRow dfr = new DataFileRow(new int[] { 20, 20, 8, 8, 8, 19 });
+            string[] array = { "OS/2", "DB2", "130", "22", "3343", "01.10.2007 11:57:00" };
+            string row = dfr.fromArrayToString(array);
+            Assert.AreEqual("                OS/2                 DB2     130      22    334301.10.2007 11:57:00", row);
+        }
+        [TestMethod]
+        public void TestDataFileRowFromStringToArray()
+        {
+            DataFileRow dfr = new DataFileRow(new int[] { 20, 20, 8, 8, 8, 19 });
+            string row = "                OS/2                 DB2     130      22    334301.10.2007 11:57:00";
+            string[] array = dfr.fromStringToArray(row);
+            Assert.AreEqual("OS/2", array[0]);
+            Assert.AreEqual("DB2", array[1]);
+            Assert.AreEqual("130", array[2]);
+            Assert.AreEqual("22", array[3]);
+            Assert.AreEqual("3343", array[4]);
+            Assert.AreEqual("01.10.2007 11:57:00", array[5]);
+        }
     }
 }
