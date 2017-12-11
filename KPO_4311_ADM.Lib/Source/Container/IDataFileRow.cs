@@ -14,59 +14,53 @@ namespace KPO_4311_ADM.Lib.Source.Container
     }
     public class DataFileRow : IDataFileRow
     {
+        private int[] _format;
+        public DataFileRow(int[] format)
+        {
+            _format = format;
+        }
         public int[] format
         {
             get
             {
-                throw new NotImplementedException();
-                //вернуть формат
+                return _format;
             }
 
             set
             {
-                throw new NotImplementedException();
-                //установить формат в заданное значение
+                _format = value;
             }
         }
 
         public string fromArrayToString(string[] array)
         {
-            throw new NotImplementedException();
-            /*
-             * объявить пустую строку стр1
-             * (Количество атрибутов в формате) РАЗ
-             *      Добавить недостоющее количество пробелов в i-тое свойство 
-             *              --> Реализовать функцию добавления пробелов
-             *      Добавить к строке стр1 i-тое свойство
-             * Конец РАЗ
-             * вернуть стр1
-             */
+            string finalRow = "";
+            for (int ix = 0; ix < _format.Length; ix++)
+            {
+                finalRow += addSpaces(array[ix], format[ix] - array[ix].Length);
+            }
+            return finalRow;
 
         }
 
         public string[] fromStringToArray(string str)
         {
-            throw new NotImplementedException();
-            /*
-             * Объявить массив строк мсСтр размеров с кол-вом аттрибутов в формате
-             * (Количество аттрибутов в формате) РАЗ
-             *      Взять подстроку из строки по позиции из i-того аттрибута формата
-             *      Удалить лишние пробелы
-             *      мсСтр i-тый установить равным полученной подстроке
-             * Конец РАЗ
-             * Вернуть мсСтр
-             */
+            string[] stringArray = new string[format.Length];
+            for (int ix = 0, pos = 0; ix < format.Length; pos += format[ix], ix++)
+            {
+                stringArray[ix] = str.Substring(pos, format[ix]).Trim(' ');
+            }
+            return stringArray;
         }
 
         public string addSpaces(string row, int spacesCount)
         {
-            throw new NotImplementedException();
-            /*
-             * Объявить пустую строку
-             * Добавить в нее нужное количество пробелов
-             * Добавить к строке пробелов исходную строку
-             * Вернуть строку
-             */
+            string spaces = "";
+            while (spacesCount-- != 0)
+            {
+                spaces += " ";
+            }
+            return spaces + row;
         }
     }
 }
