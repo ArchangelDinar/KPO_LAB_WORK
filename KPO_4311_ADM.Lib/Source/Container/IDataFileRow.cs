@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KPO_4311_ADM.Lib.Source.Container
+namespace KPO_4311_ADM.Lib
 {
     public interface IDataFileRow
     {

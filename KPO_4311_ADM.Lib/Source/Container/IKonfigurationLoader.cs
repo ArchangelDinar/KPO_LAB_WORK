@@ -146,31 +146,50 @@ namespace KPO_4311_ADM.Lib
 
     public class KonfigurationModifiedPDRLoader : IKonfigurationLoader
     {
+        private int[] format;
+        private List<Konfiguration> _konfigurationList;
+        public KonfigurationModifiedPDRLoader(int[] format)
+        {
+            this.format = format;
+        }
         public List<Konfiguration> konfigurationList
         {
             get
             {
-                throw new NotImplementedException();
-                //вернуть лист конфигураций
+                return _konfigurationList;
             }
         }
 
         public void Execute()
         {
-            throw new NotImplementedException();
-            /*
-             * Создать лист конфигураций
-             * Создать строку файла данных - СФД
-             * Открыть файл для чтения
-             * Пока не конец файла
-             *      Считать строку с файла
-             *      С помощью СФД преобразовать строку к массиву
-             *      Создать новую конфигурацию со свойсвами из массива
-             *      Добавить в лист новую конфигурацию
-             * Конец пока
-             * Закрыть файл
-             * Вернуть лист конфигураций
-             */
+            _konfigurationList = new List<Konfiguration>();
+            DataFileRow dfr = new DataFileRow(format);
+            try
+            {
+                FileStream file = new FileStream(AppGlobalSettings.rowDataFileName, FileMode.Open);
+                StreamReader reader = new StreamReader(file);
+                while (true)
+                {
+                    string row = reader.ReadLine();
+                    if (row == "") break;
+                    string[] properties = dfr.fromStringToArray(row);
+                    _konfigurationList.Add(new Konfiguration
+                    {
+                        OS = properties[0],
+                        SUBD = properties[1],
+                        HD = Convert.ToInt32(properties[2]),
+                        SD = Convert.ToInt32(properties[3]),
+                        PRICE = Convert.ToInt32(properties[4]),
+                        CREATETIME = Convert.ToDateTime(properties[5])
+                    });
+                }
+                reader.Close();
+                file.Close();
+            }
+            catch (Exception ex)
+            {
+                LogUtility.ErrorLog(ex.Message);
+            }
         }
     }
 }

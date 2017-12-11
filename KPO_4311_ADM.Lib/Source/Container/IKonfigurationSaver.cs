@@ -128,28 +128,43 @@ namespace KPO_4311_ADM.Lib
 
     public class KonfigurationModifiedPDRSaver : IKonfigurationSaver
     {
+        private List<Konfiguration> _konfigurationList;
+        private int[] format;
+        public KonfigurationModifiedPDRSaver(int[] format)
+        {
+            this.format = format;
+        }
         public List<Konfiguration> konfigurationList
         {
             set
             {
-                throw new NotImplementedException();
-                //установить лист конфигураций в заданное значение
+                _konfigurationList = value;
             }
         }
 
         public void Execute()
         {
-            throw new NotImplementedException();
-            /*
-             * Открыть файл для чтения
-             * Создать Строку Файла Данных СФД
-             * (Количество элементнов в листе конфигураций) Раз
-             *      Создать массив строк и проинициализировать его свойстами из i-той конфигурации
-             *      С помощью СФД преобразовать массив в строку
-             *      Записать в файл строку
-             * Конец Раз
-             * Закрыть файл
-             */
+            try
+            {
+                FileStream file = new FileStream(AppGlobalSettings.rowDataFileName, FileMode.Create);
+                StreamWriter writer = new StreamWriter(file);
+                DataFileRow dfr = new DataFileRow(format);
+                for (int ix = 0; ix < _konfigurationList.Count; ix++)
+                {
+                    string[] properties = { _konfigurationList[ix].OS, _konfigurationList[ix].SUBD,
+                                            _konfigurationList[ix].HD.ToString(),
+                                            _konfigurationList[ix].SD.ToString(),
+                                            _konfigurationList[ix].PRICE.ToString(),
+                                            _konfigurationList[ix].CREATETIME.ToString() };
+                    writer.WriteLine(dfr.fromArrayToString(properties));
+                }
+                writer.Close();
+                file.Close();
+            }
+            catch (Exception ex)
+            {
+                LogUtility.ErrorLog(ex.Message);
+            }
         }
     }
 }
