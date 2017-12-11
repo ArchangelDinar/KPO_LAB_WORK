@@ -13,3 +13,6 @@ F:\Documents\Visual Studio 2015\Projects\KPO_4311_ADM\KPO_4311_ADM\bin\Debug\KPO
 F:\Documents\Visual Studio 2015\Projects\KPO_4311_ADM\KPO_4311_ADM\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
 F:\Documents\Visual Studio 2015\Projects\KPO_4311_ADM\KPO_4311_ADM\bin\Debug\KPO_4311_ADM.Test.pdb
 F:\Documents\Visual Studio 2015\Projects\KPO_4311_ADM\KPO_4311_ADM\bin\Debug\ru\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+F:\Documents\GitHub\KPO_LAB_WORK\KPO_4311_ADM\bin\Debug\KPO_4311_ADM.exe.config
+F:\Documents\GitHub\KPO_LAB_WORK\KPO_4311_ADM\obj\Debug\KPO_4311_ADM.exe
+F:\Documents\GitHub\KPO_LAB_WORK\KPO_4311_ADM\obj\Debug\KPO_4311_ADM.pdb

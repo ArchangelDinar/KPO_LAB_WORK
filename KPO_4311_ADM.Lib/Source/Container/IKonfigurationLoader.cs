@@ -102,4 +102,20 @@ namespace KPO_4311_ADM.Lib
         }
     }
 
+    public class KonfigurationPDRLoader : IKonfigurationLoader
+    {
+        public List<Konfiguration> konfigurationList
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public void Execute(DataGridView dgv)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
 }
