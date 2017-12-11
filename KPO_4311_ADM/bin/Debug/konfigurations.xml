@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<List Title="Konfigurations">
+  <Konfiguration OS="OS/2" SUBD="DB2" HD="130" SD="22" PRICE="3343" CREATETIME="01.10.2007 11:57:00" />
+  <Konfiguration OS="Windows/NT" SUBD="SQLServer" HD="230" SD="24" PRICE="2685" CREATETIME="06.11.2010 11:57:00" />
+  <Konfiguration OS="SCO/Unix" SUBD="Oracle" HD="110" SD="48" PRICE="3745" CREATETIME="22.12.2017 11:57:00" />
+  <Konfiguration OS="Mac OS" SUBD="SQLServer" HD="150" SD="56" PRICE="5450" CREATETIME="11.12.2017 10:32:49" />
+</List>

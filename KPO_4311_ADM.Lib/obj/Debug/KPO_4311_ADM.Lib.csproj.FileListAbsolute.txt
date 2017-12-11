@@ -1,0 +1,8 @@
+F:\Documents\Visual Studio 2015\Projects\KPO_4311_ADM\KPO_4311_ADM.Lib\obj\Debug\KPO_4311_ADM.Lib.csprojResolveAssemblyReference.cache
+F:\Documents\Visual Studio 2015\Projects\KPO_4311_ADM\KPO_4311_ADM.Lib\bin\Debug\KPO_4311_ADM.Lib.dll.config
+F:\Documents\Visual Studio 2015\Projects\KPO_4311_ADM\KPO_4311_ADM.Lib\bin\Debug\KPO_4311_ADM.Lib.dll
+F:\Documents\Visual Studio 2015\Projects\KPO_4311_ADM\KPO_4311_ADM.Lib\bin\Debug\KPO_4311_ADM.Lib.pdb
+F:\Documents\Visual Studio 2015\Projects\KPO_4311_ADM\KPO_4311_ADM.Lib\obj\Debug\KPO_4311_ADM.Lib.dll
+F:\Documents\Visual Studio 2015\Projects\KPO_4311_ADM\KPO_4311_ADM.Lib\obj\Debug\KPO_4311_ADM.Lib.pdb
+F:\Documents\Visual Studio 2015\Projects\KPO_4311_ADM\KPO_4311_ADM.Lib\obj\Debug\KPO_4311_ADM.Lib.KonfigurationForm.resources
+F:\Documents\Visual Studio 2015\Projects\KPO_4311_ADM\KPO_4311_ADM.Lib\obj\Debug\KPO_4311_ADM.Lib.csproj.GenerateResource.Cache
