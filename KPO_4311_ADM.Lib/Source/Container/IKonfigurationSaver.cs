@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -90,24 +91,38 @@ namespace KPO_4311_ADM.Lib
 
     public class KonfigurationPDRSaver : IKonfigurationSaver
     {
+        private List<Konfiguration> _konfigurationList;
         public List<Konfiguration> konfigurationList
         {
             set
             {
-                throw new NotImplementedException();
-                //установить лист конфигураций в заданное значение
+                _konfigurationList = value;
+
             }
         }
 
         public void Execute()
         {
-            throw new NotImplementedException();
-            /*
-             * Открыть файл для записи
-             * (Количиство элементов в листе конфигураций) раз
-             *      Записать в файл строку с данными из конфигурации
-             * Закрыть файл
-             */
+            try
+            {
+                FileStream file = new FileStream(AppGlobalSettings.rowDataFileName, FileMode.Create);
+                StreamWriter writer = new StreamWriter(file);
+                for (int ix = 0; ix < _konfigurationList.Count; ix++)
+                {
+                    writer.WriteLine("{0, 20}{1, 20}{2, 8}{3, 8}{4, 8}{5, 19}",
+                        _konfigurationList[ix].OS, _konfigurationList[ix].SUBD,
+                        _konfigurationList[ix].HD.ToString(),
+                        _konfigurationList[ix].SD.ToString(),
+                        _konfigurationList[ix].PRICE.ToString(),
+                        _konfigurationList[ix].CREATETIME.ToString());
+                }
+                writer.Close();
+                file.Close();
+            }
+            catch (Exception ex)
+            {
+                LogUtility.ErrorLog(ex.Message);
+            }
         }
     }
 }
