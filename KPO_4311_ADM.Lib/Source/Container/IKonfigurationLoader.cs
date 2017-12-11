@@ -12,7 +12,7 @@ namespace KPO_4311_ADM.Lib
     public interface IKonfigurationLoader
     {
         List<Konfiguration> konfigurationList { get; }
-        void Execute(DataGridView dgv);
+        void Execute();
     }
 
     public class KonfigurationLoader : IKonfigurationLoader
@@ -22,7 +22,7 @@ namespace KPO_4311_ADM.Lib
         {
             _konfigurationList = konfigurationList;
         }
-        public void Execute(DataGridView dgv)
+        public void Execute()
         {
             if (_konfigurationList == null) _konfigurationList = new List<Konfiguration>();
             try
@@ -55,7 +55,7 @@ namespace KPO_4311_ADM.Lib
         {
             _konfigurationList = konfigurationList;
         }
-        public void Execute(DataGridView dgv)
+        public void Execute()
         {
             if (_konfigurationList == null) _konfigurationList = new List<Konfiguration>();
 
@@ -99,7 +99,6 @@ namespace KPO_4311_ADM.Lib
         public List<Konfiguration> konfigurationList
         {
             get { return _konfigurationList; }
-            set { _konfigurationList = value; }
         }
     }
 
@@ -114,7 +113,7 @@ namespace KPO_4311_ADM.Lib
             }
         }
 
-        public void Execute(DataGridView dgv)
+        public void Execute()
         {
             _konfigurationList = new List<Konfiguration>();
             try
