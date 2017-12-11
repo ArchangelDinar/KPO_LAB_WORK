@@ -87,4 +87,20 @@ namespace KPO_4311_ADM.Lib
            set { _konfigurationList = value; }
         }
     }
+
+    public class KonfigurationPDRSaver : IKonfigurationSaver
+    {
+        public List<Konfiguration> konfigurationList
+        {
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public void Execute()
+        {
+            throw new NotImplementedException();
+        }
+    }
 }
