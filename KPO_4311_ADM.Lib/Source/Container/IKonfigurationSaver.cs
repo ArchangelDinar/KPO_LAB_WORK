@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -91,80 +90,28 @@ namespace KPO_4311_ADM.Lib
 
     public class KonfigurationPDRSaver : IKonfigurationSaver
     {
-        private List<Konfiguration> _konfigurationList;
         public List<Konfiguration> konfigurationList
         {
             set
             {
-                _konfigurationList = value;
-
+                throw new NotImplementedException();
+                //Установить лист конфигураций в заданное значение
             }
         }
 
         public void Execute()
         {
-            try
-            {
-                FileStream file = new FileStream(AppGlobalSettings.rowDataFileName, FileMode.Create);
-                StreamWriter writer = new StreamWriter(file);
-                for (int ix = 0; ix < _konfigurationList.Count; ix++)
-                {
-                    writer.WriteLine("{0, 20}{1, 20}{2, 8}{3, 8}{4, 8}{5, 19}",
-                        _konfigurationList[ix].OS, _konfigurationList[ix].SUBD,
-                        _konfigurationList[ix].HD.ToString(),
-                        _konfigurationList[ix].SD.ToString(),
-                        _konfigurationList[ix].PRICE.ToString(),
-                        _konfigurationList[ix].CREATETIME.ToString());
-                }
-                writer.Close();
-                file.Close();
-            }
-            catch (Exception ex)
-            {
-                LogUtility.ErrorLog(ex.Message);
-            }
-        }
-    }
-
-    public class KonfigurationModifiedPDRSaver : IKonfigurationSaver
-    {
-        private List<Konfiguration> _konfigurationList;
-        private int[] format;
-        public KonfigurationModifiedPDRSaver(int[] format)
-        {
-            this.format = format;
-        }
-        public List<Konfiguration> konfigurationList
-        {
-            set
-            {
-                _konfigurationList = value;
-            }
-        }
-
-        public void Execute()
-        {
-            try
-            {
-                FileStream file = new FileStream(AppGlobalSettings.rowDataFileName, FileMode.Create);
-                StreamWriter writer = new StreamWriter(file);
-                DataFileRow dfr = new DataFileRow(format);
-                for (int ix = 0; ix < _konfigurationList.Count; ix++)
-                {
-                    string[] properties = { _konfigurationList[ix].OS, _konfigurationList[ix].SUBD,
-                                            _konfigurationList[ix].HD.ToString(),
-                                            _konfigurationList[ix].SD.ToString(),
-                                            _konfigurationList[ix].PRICE.ToString(),
-                                            _konfigurationList[ix].CREATETIME.ToString() };
-                    writer.WriteLine(dfr.fromArrayToString(properties));
-                }
-                writer.Close();
-                file.Close();
-            }
-            catch (Exception ex)
-            {
-                LogUtility.ErrorLog(ex.Message);
-            }
+            throw new NotImplementedException();
+            /*
+             * Открыть файл для чтения
+             * Создать записыватель в поток файла
+             * Цикл (Количество элементов в листе конфигураций) раз
+             *      Соеденить значения свойст очередного элементна листа в одну строку
+             *      Записать в файл созданную строку
+             * Все ЦИКЛ
+             * Закрыть записыватель
+             * Закрыть файл
+             */
         }
     }
 }

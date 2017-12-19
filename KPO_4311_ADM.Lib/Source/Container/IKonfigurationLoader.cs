@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +11,7 @@ namespace KPO_4311_ADM.Lib
     public interface IKonfigurationLoader
     {
         List<Konfiguration> konfigurationList { get; }
-        void Execute();
+        void Execute(DataGridView dgv);
     }
 
     public class KonfigurationLoader : IKonfigurationLoader
@@ -22,7 +21,7 @@ namespace KPO_4311_ADM.Lib
         {
             _konfigurationList = konfigurationList;
         }
-        public void Execute()
+        public void Execute(DataGridView dgv)
         {
             if (_konfigurationList == null) _konfigurationList = new List<Konfiguration>();
             try
@@ -55,7 +54,7 @@ namespace KPO_4311_ADM.Lib
         {
             _konfigurationList = konfigurationList;
         }
-        public void Execute()
+        public void Execute(DataGridView dgv)
         {
             if (_konfigurationList == null) _konfigurationList = new List<Konfiguration>();
 
@@ -99,97 +98,39 @@ namespace KPO_4311_ADM.Lib
         public List<Konfiguration> konfigurationList
         {
             get { return _konfigurationList; }
+            set { _konfigurationList = value; }
         }
     }
 
     public class KonfigurationPDRLoader : IKonfigurationLoader
     {
-        private List<Konfiguration> _konfigurationList;
         public List<Konfiguration> konfigurationList
         {
             get
             {
-                return _konfigurationList;
+                throw new NotImplementedException();
+                //вернуть лист конфигураций
             }
         }
 
-        public void Execute()
+        public void Execute(DataGridView dgv)
         {
-            _konfigurationList = new List<Konfiguration>();
-            try
-            {
-                FileStream file = new FileStream(AppGlobalSettings.rowDataFileName, FileMode.Open);
-                StreamReader reader = new StreamReader(file);
-                while (true)
-                {
-                    string row = reader.ReadLine();
-                    if (row == "") break;                    
-                    _konfigurationList.Add(new Konfiguration
-                    {
-                        OS = row.Substring(0, 20).Trim(' '),
-                        SUBD = row.Substring(20, 20).Trim(' '),
-                        HD = Convert.ToInt32(row.Substring(40, 8)),
-                        SD = Convert.ToInt32(row.Substring(48, 8)),
-                        PRICE = Convert.ToInt32(row.Substring(56, 8)),
-                        CREATETIME = Convert.ToDateTime(row.Substring(64, 19))
-                    });
-                }
-                reader.Close();
-                file.Close();
-            }
-            catch (Exception ex)
-            {
-                LogUtility.ErrorLog(ex.Message);
-            }
+            throw new NotImplementedException();
+            /**
+             * инициализировать лист конфигураций
+             * Открыть файл для чтения
+             * Создать считыватель потока из файла
+             * Цикл пока всегда
+             *      Считать строку из потока
+             *      Если строка пуста
+             *          Прервать цикл
+             *      Разбить строку на подстроки
+             *      В лист конфигураций добавить значение по подстрокам
+             * Все Цикл
+             * Закрыть считыватель
+             * Закрыть файл
+             */
         }
     }
 
-    public class KonfigurationModifiedPDRLoader : IKonfigurationLoader
-    {
-        private int[] format;
-        private List<Konfiguration> _konfigurationList;
-        public KonfigurationModifiedPDRLoader(int[] format)
-        {
-            this.format = format;
-        }
-        public List<Konfiguration> konfigurationList
-        {
-            get
-            {
-                return _konfigurationList;
-            }
-        }
-
-        public void Execute()
-        {
-            _konfigurationList = new List<Konfiguration>();
-            DataFileRow dfr = new DataFileRow(format);
-            try
-            {
-                FileStream file = new FileStream(AppGlobalSettings.rowDataFileName, FileMode.Open);
-                StreamReader reader = new StreamReader(file);
-                while (true)
-                {
-                    string row = reader.ReadLine();
-                    if (row == "") break;
-                    string[] properties = dfr.fromStringToArray(row);
-                    _konfigurationList.Add(new Konfiguration
-                    {
-                        OS = properties[0],
-                        SUBD = properties[1],
-                        HD = Convert.ToInt32(properties[2]),
-                        SD = Convert.ToInt32(properties[3]),
-                        PRICE = Convert.ToInt32(properties[4]),
-                        CREATETIME = Convert.ToDateTime(properties[5])
-                    });
-                }
-                reader.Close();
-                file.Close();
-            }
-            catch (Exception ex)
-            {
-                LogUtility.ErrorLog(ex.Message);
-            }
-        }
-    }
 }
